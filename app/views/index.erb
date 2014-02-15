@@ -1,0 +1,6 @@
+<h1>This is Chitter</h1>
+<ul>
+	<%@peeps.each do |link| %>
+		<li><%=peep.text%> <%=peep.name%> <%peep.username%></li>
+	<%end%>
+</ul>

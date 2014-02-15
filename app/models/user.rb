@@ -7,11 +7,11 @@ class User
 	attr_reader :password
 	attr_accessor :password_confirmation
 
-	property :id, 							Serial
-	property :email, 						String, :unique => true
-	property :password_digest, 	Text
-  property :name, 						String
-  property :username,					String, :unique => true
+	property :id, 							Serial, :required => true
+	property :email, 						String, :required => true, :unique => true
+	property :password_digest, 	Text,		:required => true
+  property :name, 						String,	:required => true
+  property :username,					String, :required => true, :unique => true
 
   validates_confirmation_of :password
 

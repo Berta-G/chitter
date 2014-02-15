@@ -8,6 +8,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
+
 Capybara.app = Chitter
 
 class ChitterWorld

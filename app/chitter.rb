@@ -12,18 +12,15 @@ DataMapper.finalize
 class Chitter < Sinatra::Base
 	set :views, File.join(File.dirname(__FILE__), 'views')
 
+	require_relative 'controllers/users'
+  get('/users/new')  	{UsersController.call(env)}
+  post('/users/new')	{UsersController.call(env)}
 
-  get '/' do
-    'Hello Chitter!'
-  end
+  require_relative 'controllers/peeps'
+  get('/')						{Peeps.call(env)}
 
-  get '/users/new' do
-  	erb :'users/new'
-  end
 
-  post '/users/new' do
-  	'Welcome to chitter, Pepe'
-  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

@@ -16,12 +16,18 @@ class Chitter < Sinatra::Base
   get('/users/new')  	{UsersController.call(env)}
   post('/users/new')	{UsersController.call(env)}
 
+  require_relative 'controllers/sessions'
+  get('/sessions/new') 	{SessionsController.call(env)}
+  post('/sessions')			{SessionsController.call(env)}
+
+
   require_relative 'controllers/peeps'
-  get('/')						{Peeps.call(env)}
-
-
-
+  get('/')							{PeepsController.call(env)}
 
   # start the server if ruby file executed directly
   run! if app_file == $0
+
+  
 end
+
+

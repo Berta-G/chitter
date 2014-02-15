@@ -8,20 +8,24 @@ class SessionsController < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
-  get '/sessions/new' do
-  	erb :'sessions/new'
-  end
+  # get '/sessions/new' do
+  # 	erb :'sessions/new'
+  # end
 
   post '/sessions' do
   	user = User.authenticate(params[:username], params[:password])
     if user
-    	puts "USER"
       session[:user_id] = user.id
       redirect '/'
     else
-    	puts "NO USER"
-      flash[:errors] = ["Incorrect mail or password"]
-      redirect '/sessions/new'
+      flash[:errors] = ["Incorrect username or password"]
+      redirect '/'
     end
+  end
+
+  delete '/sessions' do
+    flash[:notice] = "Goodbye, #{current_user}!"
+    session[:user_id] = nil
+    redirect '/'
   end
 end

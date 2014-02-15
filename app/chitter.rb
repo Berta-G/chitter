@@ -17,7 +17,7 @@ class Chitter < Sinatra::Base
   post('/users/new')	{UsersController.call(env)}
 
   require_relative 'controllers/sessions'
-  get('/sessions/new') 	{SessionsController.call(env)}
+  # get('/sessions/new') 	{SessionsController.call(env)}
   post('/sessions')			{SessionsController.call(env)}
 
 

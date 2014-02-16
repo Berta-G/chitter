@@ -1,3 +1,4 @@
-require './app/chitter.rb'
+require 'rubygems'
+require File.join(File.dirname(__FILE__), './app/chitter.rb')
 
-run Sinatra::Application
+run ChitterRouter

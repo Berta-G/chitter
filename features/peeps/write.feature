@@ -9,3 +9,7 @@ Scenario: A logged in user can write a peep
 	And I press "Peep"
 	Then the peep "Title" is created
 
+Scenario: A user cannot write a post if not logged
+	When I am on the homepage
+	Then I should not see "Peep"
+

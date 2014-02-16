@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'data_mapper'
 require 'rack-flash'
+require 'sinatra/partial'
 
 env = ENV['RACK_ENV'] || 'development'
 
@@ -12,6 +13,7 @@ DataMapper.finalize
 
 class Chitter < Sinatra::Base
 	set :views, File.join(File.dirname(__FILE__), 'views')
+  set :partial_template_engine, :erb
 
 	require_relative 'controllers/users'
   get('/users/new')  	{UsersController.call(env)}

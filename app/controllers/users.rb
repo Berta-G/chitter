@@ -1,4 +1,5 @@
 require_relative '../helpers/chitter_helper'
+require 'sinatra/partial' 
 
 class UsersController < Sinatra::Base
 	include ChitterHelper

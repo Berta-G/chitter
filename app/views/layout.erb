@@ -5,24 +5,8 @@
   <link rel="stylesheet" type="text/css" href="/css/application.css">  
 </head>
 <body>
-	<% if current_user %>
-		Logged in as: <%=current_user.username%>
-		<form action="/sessions" method="post">
-			<input type="hidden" name="_method" value="delete">
-			<button>Log out</button>
-		</form>
-		<form action='/peeps/post' method='post'>
-			<input type="text" name="peep_title">
-			<textarea maxlength="50" name="peep_text" >Your Peep</textarea>
-			<button>Peep</button>
-		</form>
-	<%else%>
-		<form id="Log in" action='/sessions' method='post'>
-			<input type='text' name='username'>
-			<input type='text' name='password'>
-			<button>Log in</button>
-		</form>
-	<%end%>
+	<%= erb :logged_in_or_out %>
+		
 	<% if flash[:notice] %>
   	<div id="notice"><%= flash[:notice] %></div>
 	<% end %>

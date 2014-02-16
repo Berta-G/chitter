@@ -1,0 +1,5 @@
+<%if current_user %>
+	<%= erb :logged_in, :locals=>{:username => current_user.username} %>
+<%else%>
+	<%= erb :logged_out %>
+<%end%>

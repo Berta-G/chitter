@@ -13,7 +13,7 @@ class User
   property :name, 						String,	:required => true
   property :username,					String, :required => true, :unique => true
 
-  has n, :peeps, :through => Resource
+  # has n, :peeps, :through => Resource
 
   validates_confirmation_of :password
 

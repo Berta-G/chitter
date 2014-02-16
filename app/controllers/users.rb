@@ -14,7 +14,6 @@ module Controllers
         redirect to '/'
 
       else
-      	puts @user.errors.full_messages
       	flash.now[:errors] = @user.errors.full_messages
         erb :"/users/new"
       end

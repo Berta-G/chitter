@@ -13,4 +13,11 @@ class PeepsController < Sinatra::Base
 		erb :index
 	end
 
+	post '/peeps/post' do
+		title, text, user = params[:peep_title], params[:peep_text], current_user
+		puts title + text + user.name
+		Peep.create(title: title, text: text, user: user)
+	end
+
+
 end

@@ -15,10 +15,6 @@ Given(/^the user "(.*?)" exists$/) do |username|
 	
 end
 
-Given(/^the user "(.*?)" exists and is logged in$/) do |username|
-  Given the user username exists
-  session[:user_id] = User.first(:username => username).id
 
-end
 
 

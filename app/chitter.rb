@@ -6,6 +6,7 @@ env = ENV['RACK_ENV'] || 'development'
 
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 require './app/models/user'
+require './app/models/peep'
 DataMapper.auto_upgrade!
 DataMapper.finalize
 
@@ -17,12 +18,11 @@ class Chitter < Sinatra::Base
   post('/users/new')	{UsersController.call(env)}
 
   require_relative 'controllers/sessions'
-  # get('/sessions/new') 	{SessionsController.call(env)}
-  post('/sessions')			{SessionsController.call(env)}
-
+  post('/sessions')		{SessionsController.call(env)}
 
   require_relative 'controllers/peeps'
-  get('/')							{PeepsController.call(env)}
+  get('/')						{PeepsController.call(env)}
+  post('/peeps/post') {PeepsController.call(env)}
 
   # start the server if ruby file executed directly
   run! if app_file == $0

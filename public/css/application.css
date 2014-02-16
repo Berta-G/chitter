@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, Sans-serif;
+  background-image: url(/images/paven.png);
+  color: #333;  
+}
+
+/* http://ryanfait.com/resources/footer-stick-to-bottom-of-page/ */
+#main {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -70px;
+  /*background-color: salmon;*/
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #b77843;
+}
+
+button.highlighted {
+  background-color: #b77843;
+}
+
+header {
+  width: 100%;
+  height: 4em;
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 0 5px;
+}
+
+article header {
+  width: 100%;
+  height: 2em;
+  background-color: grey;
+  color: white;
+  display: flex;
+  padding: 0 5px;
+}
+
+#Sign_up {
+  width: 30%;
+}
+
+#Sign_up li {
+  margin-top: 1em;
+  font-size: 16;
+  width: 30%;
+
+}
+
+#peeps_list {
+  background-color: white;
+  margin: 40px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  padding: 10px;
+}
+
+button {
+  display: inline-block; /* display inline but have dimensions */
+  width: 110px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #82B743;
+  border: 2px solid white;
+  color: white; /*text colour*/
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+}
+
+/* a link that has both classes. Overrides the previous declaration */
+.button.highlighted {
+  background-color: #b77843;
+} 
+
+header h1 {  
+    font-size: 14;  
+    display: flex;   
+    margin-right: 20px;  
+  }
+
+header a {
+    color: white;
+  }
+
+#Peep {
+  background-color: #EEE;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  margin: 10px inherit;
+  padding: 15px 10px;
+}
+
+#Peep p {
+    margin: 10px inherit;
+  }
+
+#Peep header h1{
+  font-size: 18px;
+
+}  

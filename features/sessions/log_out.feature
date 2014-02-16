@@ -5,7 +5,7 @@ Background:
 	
 Scenario: User logs out
 	Given user "Pepe" is logged in
-	Then I should see "Logged in as: Pepe"
+	Then I should see "Welcome to chitter, Pepe"
 	When I press "Log out" 
 	Then I should see "Goodbye"
-	And I should not see "Logged in as: Pepe"
+	And I should not see "Welcome to chitter, Pepe"

@@ -10,8 +10,6 @@ module Controllers
     	email, password, password_confirmation, name, username = params[:email], params[:password], params[:password_confirmation], params[:name], params[:username]
     	@user = User.new(email: email, password: password, password_confirmation: password_confirmation, name: name, username: username)
     	if @user.save
-        puts 'saved!!'
-    		flash[:notice] = "Welcome to chitter, #{username}"
         session[:user_id] = @user.id
         redirect to '/'
 

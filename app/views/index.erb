@@ -1,17 +1,10 @@
-<h1>This is Chitter</h1>
+
+<%if current_user %>
+	<%= erb :peep_box %> 
+<%end%>
+<p id="latest_peeps">Latest Peeps:</p>
 <ul id='peeps_list'>
 	<%@peeps.each do |peep| %>
-		<li>
-			<article>
-				<header>
-					<h1><%=peep.title%></h1>
-					<p>Created: <%=peep.created_at%> Updated: <%=peep.updated_at%>
-				</header>
-				<p><%=peep.text%></p>
-				<footer>
-					<p><%=peep.user.username%> <%=peep.user.name%></p>
-				</footer>
-			</article>
-		</li>
+		<%= erb :posted_peep, :locals=>{:peep => peep} %>
 	<%end%>
 </ul>

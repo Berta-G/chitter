@@ -14,7 +14,7 @@ module Controllers
     end
 
     delete '/sessions' do
-      flash[:notice] = "Goodbye, #{current_user}!"
+      flash[:notice] = "Goodbye, #{current_user.username}!"
       session[:user_id] = nil
       redirect '/'
     end

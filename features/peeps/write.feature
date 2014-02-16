@@ -11,5 +11,5 @@ Scenario: A logged in user can write a peep
 
 Scenario: A user cannot write a post if not logged
 	When I am on the homepage
-	Then I should not see "Peep"
+	Then I should not see "Your Peep"
 

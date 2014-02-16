@@ -2,11 +2,15 @@
 <html>
 <head>
 	<title>Chitter</title>
+	<link rel="stylesheet" type="text/css" href="/css/reset.css">
   <link rel="stylesheet" type="text/css" href="/css/application.css">  
 </head>
 <body>
-	<%= erb :logged_in_or_out %>
-	<%= erb :flash_messages %>
-  <%= yield %>
+	<section id='main'>
+		<%= erb :header %>
+		<%= erb :flash_messages %>
+  	<%= yield %>
+  </section>
+  
 </body>
 </html>

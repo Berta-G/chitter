@@ -1,0 +1,8 @@
+<header>
+	<h1>Chitter</h1>
+	<%if current_user %>
+		<%= erb :logged_in%>
+	<%else%>
+		<%= erb :logged_out %>
+	<%end%>
+</header>

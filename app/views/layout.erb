@@ -6,17 +6,7 @@
 </head>
 <body>
 	<%= erb :logged_in_or_out %>
-		
-	<% if flash[:notice] %>
-  	<div id="notice"><%= flash[:notice] %></div>
-	<% end %>
-	<% if flash[:errors] && !flash[:errors].empty? %>
-		<ul>
-			<% flash[:errors].each do |error| %>
-				<li> <%=error%> </li>
-			<%end%>
-		</ul>
-	<%end%>
+	<%= erb :flash_messages %>
   <%= yield %>
 </body>
 </html>

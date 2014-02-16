@@ -1,14 +1,17 @@
 <h1>This is Chitter</h1>
 <ul id='peeps_list'>
 	<%@peeps.each do |peep| %>
-		<li><article>
+		<li>
+			<article>
 				<header>
 					<h1><%=peep.title%></h1>
 					<p>Created: <%=peep.created_at%> Updated: <%=peep.updated_at%>
 				</header>
 				<p><%=peep.text%></p>
 				<footer>
-					<p><%=peep.user.username%> <%=peep.user.name%></p></footer>
-		</article></li>
+					<p><%=peep.user.username%> <%=peep.user.name%></p>
+				</footer>
+			</article>
+		</li>
 	<%end%>
 </ul>

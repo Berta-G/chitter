@@ -9,7 +9,7 @@ require 'capybara/cucumber'
 require 'rspec'
 
 
-Capybara.app = Chitter
+Capybara.app = ChitterRouter
 
 class ChitterWorld
   include Capybara::DSL

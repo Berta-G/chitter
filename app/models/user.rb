@@ -13,8 +13,6 @@ class User
   property :name, 						String,	:required => true
   property :username,					String, :required => true, :unique => true
 
-  # has n, :peeps, :through => Resource
-
   validates_confirmation_of :password
 
   def password=(password)
@@ -26,4 +24,5 @@ class User
     user = User.first(:username => username)
     user && BCrypt::Password.new(user.password_digest) == password ? user : nil
   end
+  
 end

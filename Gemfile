@@ -9,6 +9,7 @@ gem 'bcrypt-ruby'
 gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'thin'
+gem 'pg'
 
 
 group :development, :test do

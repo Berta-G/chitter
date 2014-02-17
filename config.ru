@@ -1,4 +1,9 @@
 require 'rubygems'
-require File.join(File.dirname(__FILE__), './app/chitter.rb')
+require File.join(File.dirname(__FILE__), 'app/chitter.rb')
 
 run ChitterRouter
+
+use Rack::Static,
+	:urls => ["/css"],
+	:root => "public"
+

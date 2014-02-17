@@ -13,6 +13,7 @@ module Controllers
   	use Rack::MethodOverride
 		
 		set :views, File.join(File.dirname(__FILE__), '..', '/views')
+		set :public_folder, File.join(File.dirname(__FILE__), '..', '..', '/public')
   	set :session_secret, '17051982'
   	set :partial_template_engine, :erb
   	
